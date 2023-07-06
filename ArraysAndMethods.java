@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class ArraysAndMethods {
     public static void main(String[] args) {
         /*
@@ -182,16 +184,53 @@ public class ArraysAndMethods {
          * elements in the second array.
          */
 
+        double[] mathGrades = { 85.0, 62.5, 40.5, 86.0, 71.0 };
+        double[] scienceGrades = { 79.5, 42.5, 92.5, 54.5, 98.0 };
+
+        System.out.println(isFirstArrayAverageGreaterThanSecondArrayAverage(mathGrades, scienceGrades));
+
+        System.out.println("----------");
+
         /*
          * 12.Write a method called willBuyDrink that takes a boolean isHotOutside, and
          * a double moneyInPocket, and returns true if it is hot outside and if
          * moneyInPocket is greater than 10.50.
          */
 
+        System.out.println(willBuyDrink(true, 20.0));
+
+        System.out.println(willBuyDrink(false, 20.0));
+
+        System.out.println(willBuyDrink(true, 5.0));
+
+        System.out.println(willBuyDrink(true, 10.50));
+
+        System.out.println(willBuyDrink(true, 11.50));
+
+        System.out.println("----------");
+
         /*
          * 13.Create a method of your own that solves a problem. In comments, write what
          * the method does and why you created it.
          */
+
+        int[] numArray1 = { 1, 2, 3, 4, 5 };
+
+        int[] numArray2 = { 20, 40, 60, 80, 100 };
+
+        int[] numArray3 = { 10, 9, 8, 7, 6, 5, 4, 3, 2, 1 };
+
+        System.out.println("Original Array: " + Arrays.toString(numArray1));
+
+        System.out.println("Reversed Array: " + Arrays.toString(reverseArray(numArray1)));
+
+        System.out.println("Original Array: " + Arrays.toString(numArray2));
+
+        System.out.println("Reversed Array: " + Arrays.toString(reverseArray(numArray2)));
+
+        System.out.println("Original Array: " + Arrays.toString(numArray3));
+
+        System.out.println("Reversed Array: " + Arrays.toString(reverseArray(numArray3)));
 
     }
 
@@ -245,8 +284,43 @@ public class ArraysAndMethods {
 
     // method for 11:
 
+    public static boolean isFirstArrayAverageGreaterThanSecondArrayAverage(double[] array1, double[] array2) {
+        double sum1 = 0;
+        double sum2 = 0;
+
+        for (double num : array1) {
+            sum1 += num;
+        }
+
+        for (double num : array2) {
+            sum2 += num;
+        }
+
+        double average1 = sum1 / array1.length;
+        double average2 = sum2 / array2.length;
+
+        System.out.println(average1);
+        System.out.println(average2);
+
+        return average1 > average2;
+    }
+
     // method for 12:
 
+    public static boolean willBuyDrink(boolean isHotOutside, double moneyInPocket) {
+        return isHotOutside && moneyInPocket > 10.50;
+    }
+
     // method for 13:
+
+    public static int[] reverseArray(int[] array) {
+        int[] reversedArray = new int[array.length];
+
+        for (int i = 0; i < array.length; i++) {
+            reversedArray[i] = array[array.length - 1 - i];
+        }
+
+        return reversedArray;
+    }
 
 }
