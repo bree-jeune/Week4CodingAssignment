@@ -57,7 +57,7 @@ public class ArraysAndMethods {
             averageAge += (double) updatedAges[i] / (double) updatedAges.length;
         }
 
-        System.out.println("Average age in array of names: " + (double) averageAge);
+        System.out.println("Average age in array of ages: " + (double) averageAge);
         System.out.println("----------");
 
         /*
